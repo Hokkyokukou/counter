@@ -3,6 +3,7 @@ let counter = 0;
 const counterControlButtons = document.querySelectorAll('.btn');
 const counterValue = document.querySelector('#value');
 
+
 function updateCounter(updatedValue) {
     if (updatedValue > 0) {
         counterValue.style.color = "green";
@@ -14,6 +15,7 @@ function updateCounter(updatedValue) {
         counterValue.style.color = "#222";
     }
     counterValue.textContent = counter;
+    localStorage.setItem('counter', counter);
 }
 
 function handleButtonClick(event) {
@@ -27,4 +29,13 @@ function handleButtonClick(event) {
 for (counterButtonIndex = 0; counterButtonIndex < counterControlButtons.length; counterButtonIndex++) {
     counterControlButtons[counterButtonIndex].addEventListener('click', handleButtonClick);
 }
+
+function loadCounterValue() {
+    const savedCounterValue = localStorage.getItem('counter');
+    document.querySelector('#value').textContent = savedCounterValue;
+    document.querySelector('#saved_value').textContent = `Value saved: ${savedCounterValue}`;
+}
+
+const loadButton = document.querySelector('#load_button');
+loadButton.addEventListener('click', loadCounterValue);
 
