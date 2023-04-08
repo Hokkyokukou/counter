@@ -45,4 +45,6 @@ function incrementCounter() {
     document.querySelector('#auto_counter').textContent = `Auto counter: ${counter}`
 }
 //auto increment 1 second
-setInterval(incrementCounter, 1000);
+setInterval(function() {
+    incrementCounter();
+}, 1000);
