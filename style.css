@@ -1,5 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to right, rgb(239, 5, 96), rgb(45, 39, 230));;
 }
 .increase, .decrease {  
     width: 11em;
@@ -17,12 +18,12 @@ body {
     height: 30px;
     letter-spacing: .5em;
     padding: 6px;
+    background-image: linear-gradient(to right, rgb(239, 5, 96), rgb(45, 39, 230));;
 }
 
 #value {
     font-weight: bold;
     display: block;
-    
 }
 
 .container {
