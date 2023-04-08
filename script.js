@@ -40,14 +40,9 @@ const loadButton = document.querySelector('#load_button');
 loadButton.addEventListener('click', loadCounterValue);
 
 
-//auto increment 1 second
-var counterElement = document.createElement("div");
-counterElement.id = "counter";
-document.body.appendChild(counterElement);
-
 function incrementCounter() {
     counter++;
-    document.getElementById("counter").innerHTML = counter;
+    document.querySelector('#auto_counter').textContent = `Auto counter: ${counter}`
 }
-
+//auto increment 1 second
 setInterval(incrementCounter, 1000);
