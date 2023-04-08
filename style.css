@@ -1,0 +1,36 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.increase, .decrease {  
+    width: 11em;
+}
+
+.reset {
+    width: 90px;
+} 
+
+.btn {
+    text-transform: uppercase;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    height: 30px;
+    letter-spacing: .5em;
+    padding: 6px;
+}
+
+#value {
+    font-weight: bold;
+    display: block;
+    
+}
+
+.container {
+    text-align: center;
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
