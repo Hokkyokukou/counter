@@ -1,50 +1,52 @@
-let counter = 0;
+function myCounter() {
+    let counter = 0;
+    const buttons = document.querySelectorAll('.btn');
 
-const counterControlButtons = document.querySelectorAll('.btn');
-const counterValue = document.querySelector('#value');
-
-
-function updateCounter(updatedValue) {
-    if (updatedValue > 0) {
-        counterValue.style.color = "green";
+    function updateCounter(updatedValue) {
+        const counterValue = document.querySelector('#value');
+        if (updatedValue > 0) {
+            counterValue.style.color = "green";
+        }
+        if (updatedValue < 0) {
+            counterValue.style.color = "red";
+        }
+        if (updatedValue === 0) {
+            counterValue.style.color = "#222";
+        }
+        counterValue.textContent = updatedValue;
+        localStorage.setItem('counter', updatedValue);
     }
-    if (updatedValue < 0) {
-        counterValue.style.color = "red";
+
+    function handleButtonClick(event) {
+        const counterButtonStyles = event.currentTarget.classList;
+        counterButtonStyles.contains("decrease") ? counter-- :
+        counterButtonStyles.contains("increase") ? counter++ :
+        counter = 0;
+        updateCounter(counter);
     }
-    if (updatedValue === 0) {
-        counterValue.style.color = "#222";
+
+    buttons.forEach(function(button) {
+        button.addEventListener('click', handleButtonClick);
+    });
+    
+    function loadCounterValue() {
+        const savedCounterValue = localStorage.getItem('counter');
+        document.querySelector('#value').textContent = savedCounterValue;
+        document.querySelector('#saved_value').textContent = `Value saved: ${savedCounterValue}`;
     }
-    counterValue.textContent = counter;
-    localStorage.setItem('counter', counter);
+    
+    const loadButton = document.querySelector('#load_button');
+    loadButton.addEventListener('click', loadCounterValue);
+    
+    function incrementCounter() {
+        counter++;
+        document.querySelector('#auto_counter').textContent = `Auto counter: ${counter}`;
+    }
+    //auto increment every 1 second
+    setInterval(function() {
+        incrementCounter();
+    }, 1000);
+
 }
 
-function handleButtonClick(event) {
-    const counterButtonStyles = event.currentTarget.classList;
-    counterButtonStyles.contains("decrease") ? counter-- :
-    counterButtonStyles.contains("increase") ? counter++ :
-    counter = 0;
-    updateCounter(counter);
-}
-
-for (counterButtonIndex = 0; counterButtonIndex < counterControlButtons.length; counterButtonIndex++) {
-    counterControlButtons[counterButtonIndex].addEventListener('click', handleButtonClick);
-}
-
-function loadCounterValue() {
-    const savedCounterValue = localStorage.getItem('counter');
-    document.querySelector('#value').textContent = savedCounterValue;
-    document.querySelector('#saved_value').textContent = `Value saved: ${savedCounterValue}`;
-}
-
-const loadButton = document.querySelector('#load_button');
-loadButton.addEventListener('click', loadCounterValue);
-
-
-function incrementCounter() {
-    counter++;
-    document.querySelector('#auto_counter').textContent = `Auto counter: ${counter}`
-}
-//auto increment 1 second
-setInterval(function() {
-    incrementCounter();
-}, 1000);
+myCounter();
