@@ -1,27 +1,32 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background-image: linear-gradient(to right, rgb(239, 5, 96), rgb(45, 39, 230));
+    background-image: linear-gradient(
+        to right,
+        rgb(239, 5, 96),
+        rgb(45, 39, 230)
+    );
 }
-.increase, .decrease {  
+.increase,
+.decrease {
     width: 11em;
 }
 
 .reset {
     width: 90px;
-} 
+}
 
-.btn, .save {
+.btn,
+.save {
     text-transform: uppercase;
     background-color: white;
     border-radius: 10px;
     margin: 20px;
     height: 30px;
-    letter-spacing: .5em;
+    letter-spacing: 0.5em;
     padding: 6px;
     background: transparent;
     border: black double;
     color: black;
-
 }
 
 #value {
@@ -29,7 +34,9 @@ body {
     display: block;
 }
 
-.container {
+.container,
+header,
+footer {
     text-align: center;
 }
 
