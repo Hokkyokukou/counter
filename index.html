@@ -13,23 +13,33 @@
     </head>
 
     <body>
+        <header>
+            <h1>Counter</h1>
+        </header>
         <main>
             <div class="container">
-                <header><h1>Counter</h1></header>
-                <span id="value">0</span>
-                <div class="button-container">
-                    <button class="btn decrease">decrease</button>
-                    <button id="reset" class="btn reset">reset</button>
-                    <button class="btn increase">increase</button>
-                    <button id="load_button" class="save">save</button>
-                </div>
-                <p id="saved_value"></p>
-                <!-- <button id="btn_max_value">max value</button> -->
-                <p id="auto_counter"></p>
-                <!-- <button id="stop_button">Stop</button> -->
+                <section>
+                    <span id="value">0</span>
+                    <div class="button-container">
+                        <button class="btn decrease">decrease</button>
+                        <button id="reset" class="btn reset">reset</button>
+                        <button class="btn increase">increase</button>
+                        <button id="load_button" class="save">save</button>
+                    </div>
+                </section>
+                <section>
+                    <p id="saved_value"></p>
+                    <!-- <button id="btn_max_value">max value</button> -->
+                    <p id="auto_counter"></p>
+                    <!-- <button id="stop_button">Stop</button> -->
+                </section>
             </div>
         </main>
-
+        
+        <footer>
+            <p>Made with &#x2764;</p>
+        </footer>
+        
         <script src="assets/js/main.js"></script>
     </body>
 </html>
