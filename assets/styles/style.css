@@ -1,18 +1,17 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-image: linear-gradient(
-        to right,
-        rgb(239, 5, 96),
-        rgb(45, 39, 230)
+        to left,
+        rgb(124, 213, 117),
+        rgb(247, 71, 92)
     );
 }
 .increase,
-.decrease {
-    width: 11em;
-}
-
-.reset {
-    width: 90px;
+.decrease,
+.reset,
+.save {
+    width: 4em;
+    height: 3em;
 }
 
 .btn,
@@ -21,11 +20,11 @@ body {
     background-color: white;
     border-radius: 10px;
     margin: 20px;
-    height: 30px;
+    /* height: 40px; */
     letter-spacing: 0.5em;
     padding: 6px;
     background: transparent;
-    border: black double;
+    border: black solid 2px;
     color: black;
 }
 
